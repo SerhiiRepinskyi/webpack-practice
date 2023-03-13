@@ -33,3 +33,32 @@
 
 
 import './styles/style.css'
+
+// ========== task 1 ==========
+import { base, list, frameworks, libs } from "./data/hbsData";
+import hbsBase from './templates/base.hbs'
+import hbsList from "./templates/list.hbs";
+import hbsFrameworks from "./templates/frameworks.hbs";
+import hbsLibs from "./templates/libs.hbs";
+
+const markupBase = hbsBase(base);
+// console.log(markupBase);
+const markupList = hbsList(list);
+// console.log(markupList);
+const markupFrameworks = hbsFrameworks(frameworks);
+// console.log(markupFrameworks);
+const markupLibs = hbsLibs(libs);
+// console.log(markupLibs);
+
+const root = document.querySelector("#root");
+
+root.insertAdjacentHTML("beforeend", markupBase);
+root.insertAdjacentHTML("beforeend", markupList);
+root.insertAdjacentHTML("beforeend", markupFrameworks);
+root.insertAdjacentHTML("beforeend", markupLibs);
+
+// ========== task 2 ==========
+// В input вводяться дані. При натисканні Add додається список.
+// При перезавантаженні сторінки список не зникає.
+// Дані зберегти в localStorage, очистити.
+// Рознести по файлам, використати import.
